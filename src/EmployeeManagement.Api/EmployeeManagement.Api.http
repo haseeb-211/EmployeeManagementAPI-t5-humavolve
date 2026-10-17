@@ -1,0 +1,49 @@
+@EmployeeManagement.Api_HostAddress = http://localhost:5107
+
+### Get all employees
+GET {{EmployeeManagement.Api_HostAddress}}/api/employees
+Accept: application/json
+
+### Get employee by id
+GET {{EmployeeManagement.Api_HostAddress}}/api/employees/1
+Accept: application/json
+
+### Create employee
+POST {{EmployeeManagement.Api_HostAddress}}/api/employees
+Content-Type: application/json
+
+{
+  "fullName": "Ada Lovelace",
+  "email": "ada.lovelace@example.com",
+  "department": "Engineering",
+  "salary": 95000.50
+}
+
+### Create employee - invalid (expects 400)
+POST {{EmployeeManagement.Api_HostAddress}}/api/employees
+Content-Type: application/json
+
+{
+  "fullName": "",
+  "email": "not-an-email",
+  "department": "Engineering",
+  "salary": -1
+}
+
+### Update employee
+PUT {{EmployeeManagement.Api_HostAddress}}/api/employees/1
+Content-Type: application/json
+
+{
+  "fullName": "Ada L. Byron",
+  "email": "ada.lovelace@example.com",
+  "department": "Research",
+  "salary": 110000
+}
+
+### Delete employee
+DELETE {{EmployeeManagement.Api_HostAddress}}/api/employees/1
+
+### OpenAPI document
+GET {{EmployeeManagement.Api_HostAddress}}/openapi/v1.json
+Accept: application/json

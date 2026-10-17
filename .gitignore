@@ -1,0 +1,22 @@
+## .NET / Visual Studio
+bin/
+obj/
+*.user
+*.suo
+.vs/
+*.trx
+TestResults/
+coverage*.json
+coverage*.xml
+coverage*.info
+
+## Secrets and local configuration
+secrets.json
+appsettings.*.local.json
+
+## OS
+Thumbs.db
+.DS_Store
+
+## Logs
+*.log
